@@ -2,12 +2,8 @@ package com.agiledeveloper;
 
 import java.util.*;
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.api.BeforeEach;
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.platform.runner.JUnitPlatform;
-import org.junit.runner.RunWith;
 
-@RunWith(JUnitPlatform.class)
 public class MapsTest {
   private Map<String, Integer> scores = new HashMap<String, Integer>() {
     {

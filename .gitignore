@@ -4,3 +4,9 @@
 target/
 projet/target
 .idea
+.gradle/
+build/
+gradle[w?]
+gradlew.bat
+gradle/
+bin/

@@ -1,15 +1,14 @@
 package com.agiledeveloper;
 
-import org.junit.jupiter.api.*;
-import org.junit.jupiter.api.BeforeEach;
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.platform.runner.JUnitPlatform;
+import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.io.*;          
+import java.io.FileNotFoundException;
 
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 
-@RunWith(JUnitPlatform.class)
 public class WordCountTest {
   @Test
   void noFile() {
