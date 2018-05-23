@@ -26,10 +26,10 @@ dependencies {
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     // implementation 'com.google.guava:guava:23.0'
 
-    compileOnly 'io.vavr:vavr:0.9.2' 
     annotationProcessor 'io.vavr:vavr:0.9.2'
 
     // Use JUnit test framework
+    testImplementation 'io.vavr:vavr:0.9.2' 
     testImplementation 'org.junit.platform:junit-platform-runner:1.2.0' 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.2.0' 
     testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.2.0' 
