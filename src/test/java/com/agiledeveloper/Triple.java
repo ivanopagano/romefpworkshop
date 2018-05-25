@@ -4,17 +4,6 @@ import java.util.*;
 import java.util.stream.*;
 import static java.util.stream.Collectors.*;
 
-class Pair {
-  public final int _1;
-  public final int _2;
-  
-  public Pair(int first, int sec) {
-    _1 = first;
-    _2 = sec;
-  }
-}
-
-
 class Triple {
   public static String getTriple(int m, int n) {   
     int a = m * m - n * n;
@@ -30,9 +19,8 @@ class Triple {
       .boxed()
       .flatMap(m -> 
         IntStream.range(1, m)
-          .mapToObj(n -> new Pair(m, n))
-        )
-      .map(p -> getTriple(p._1, p._2))
+          .mapToObj(n -> getTriple(m, n))
+      )
       .limit(numberOfValues)
       .collect(toList());
  }  

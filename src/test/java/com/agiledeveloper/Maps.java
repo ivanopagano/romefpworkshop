@@ -6,16 +6,6 @@ import static java.util.Comparator.*;
 
 public class Maps {
 
-  public static class MyEntry<K, V> {
-    public final K key;
-    public final V value;
-
-    public MyEntry(K key, V value) {
-      this.key = key;
-      this.value = value;
-    }
-  }
-
   public static Map<Integer, List<String>> listByScore(Map<String, Integer> scores) {
     return scores.keySet().stream()
             .collect(groupingBy(scores::get))
