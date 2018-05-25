@@ -1,11 +1,10 @@
 package com.agiledeveloper;
 
-import java.io.*;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.NoSuchFileException;
-import java.nio.file.Paths;
 import java.nio.file.Path;
-import java.util.stream.Stream;
+import java.nio.file.Paths;
 
 public class WordCount {
   public static long count(String path, String searchWord) {
