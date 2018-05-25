@@ -1,19 +1,8 @@
 package com.agiledeveloper;
 
-import java.util.*;
-import java.util.stream.*;
-import static java.util.stream.Collectors.*;
+import java.util.List;
 
-class Pair {
-  public final int _1;
-  public final int _2;
-  
-  public Pair(int first, int sec) {
-    _1 = first;
-    _2 = sec;
-  }
-}
-
+import io.vavr.collection.Stream;
 
 class Triple {
   public static String getTriple(int m, int n) {   
@@ -25,15 +14,12 @@ class Triple {
   }
   
   public static List<String> computeTriples(int numberOfValues) {
-
-    return IntStream.range(2, 2 + numberOfValues)
-      .boxed()
-      .flatMap(m -> 
-        IntStream.range(1, m)
-          .mapToObj(n -> new Pair(m, n))
-        )
-      .map(p -> getTriple(p._1, p._2))
-      .limit(numberOfValues)
-      .collect(toList());
- }  
+    return Stream.range(2, 2 + numberOfValues)
+      .flatMap(m ->
+        Stream.range(1, m)
+          .map(n -> getTriple(m, n))
+      )
+      .take(numberOfValues)
+      .asJava();
+  }
 }
