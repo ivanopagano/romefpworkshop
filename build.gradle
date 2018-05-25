@@ -11,6 +11,10 @@ plugins {
     id 'java-library'
 }
 
+configurations {
+    vavr
+}
+
 sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
 
@@ -20,20 +24,17 @@ test {
 }
 
 dependencies {
-    // This dependency is exported to consumers, that is to say found on their compile classpath.
-    // api 'org.apache.commons:commons-math3:3.6.1'
+    vavr 'io.vavr:vavr:0.9.2'
 
-    // This dependency is used internally, and not exposed to consumers on their own compile classpath.
-    // implementation 'com.google.guava:guava:23.0'
-
-    annotationProcessor 'io.vavr:vavr:0.9.2'
-
-    // Use JUnit test framework
     testImplementation 'io.vavr:vavr:0.9.2' 
-    testImplementation 'org.junit.platform:junit-platform-runner:1.2.0' 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.2.0' 
-    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.2.0' 
     testImplementation 'com.novocode:junit-interface:0.11'  
+    // testRuntimeOnly 'org.junit.platform:junit-platform-runner:1.2.0' 
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.2.0' 
+}
+
+compileTestJava {
+    options.annotationProcessorPath = configurations.vavr
 }
 
 // In this section you declare where to find the dependencies of your project
